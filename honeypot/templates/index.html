@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Honeypot Dashboard</title>
+</head>
+<body>
+    <h1>Honeypot Traffic Logs</h1>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Service</th>
+            <th>IP Address</th>
+            <th>Request</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
