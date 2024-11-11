@@ -1,0 +1,33 @@
+import pyotp
+import qrcode
+import time
+
+
+key = pyotp.random_base32()  
+print(f"Secret Key: {key}")
+
+# Step 2: Create a TOTP object based on the secret key
+totp = pyotp.TOTP(key)
+
+
+uri = totp.provisioning_uri(name="user@example.com", issuer_name="MyApp")
+qrcode_img = qrcode.make(uri)
+qrcode_img.save("totp_qr.png")
+print("QR Code generated and saved as 'totp_qr.png'.")
+
+
+print(f"Current OTP: {totp.now()}")
+
+# Step 5: Verify the OTP code entered by the user
+user_code = input("Enter the 2FA code: ")
+if totp.verify(user_code):
+    print("Code is valid")
+else:
+    print("Code is invalid")
+
+
+print("Waiting 30 seconds for OTP expiration...")
+time.sleep(30)
+
+new_code = totp.now()
+print(f"New OTP after 30 seconds: {new_code}")
