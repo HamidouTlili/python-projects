@@ -16,7 +16,7 @@ Installation
 Clone the repository:
 
 
-git clone https://github.com/yourusername/hamidou-honeypot.git
+git clone https://github.com/HamidouTlili/python-projects.git
 cd hamidou-honeypot
 Install the necessary dependencies:
 
@@ -44,8 +44,7 @@ telnet localhost 2222
 FTP Honeypot: The FTP honeypot listens on port 21. All FTP connection attempts are logged.
 
 Test it using telnet:
-bash
-Copier le code
+copy code :
 telnet localhost 21
 Web Dashboard: The Flask app provides a web dashboard to view logged requests. It runs on port 5000.
 
