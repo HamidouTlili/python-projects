@@ -15,11 +15,10 @@ No external libraries are required for this project, only the built-in Python li
 
 How to Run
 Clone the repository (or copy the script) to your local machine:
+git clone https://github.com/HamidouTlili/python-projects.git
+cd python-projects/hamidou_proxy_server
 
-bash
-Copier le code
-git clone https://github.com/HamidouTlili/hamidou-proxy-server.git
-cd hamidou-proxy-server
+
 Run the Proxy Server:
 
 bash
@@ -29,8 +28,7 @@ Configure your browser or terminal to use the proxy:
 
 For a web browser: Go to your browser’s proxy settings and configure it to use localhost:8080.
 For the terminal: Use curl to test requests.
-bash
-Copier le code
+
 curl -x http://localhost:8080 http://example.com
 How to Authenticate
 When making a request through the proxy server, the client must provide a valid username and password via the Authorization header. Currently, the server supports these user credentials:
@@ -60,22 +58,19 @@ When a blocked URL is accessed, the server will return a 403 Forbidden response.
 Test the Proxy
 You can test the proxy server using curl or a browser:
 
-bash
-Copier le code
+
 curl -x http://localhost:8080 http://google.com  # Should pass
 curl -x http://localhost:8080 http://malware.com  # Should block
 Customization
 Add or Remove Users
 To add more valid users, modify the VALID_USERS dictionary:
 
-python
-Copier le code
+
 VALID_USERS = {"newuser": "newpassword", ...}
 Update the Block List
 To add or remove URLs from the block list, edit the blocked_urls list:
 
-python
-Copier le code
+copy code :
 blocked_urls = [
     "new-blocked-site.com",
     ...
@@ -83,8 +78,7 @@ blocked_urls = [
 Change the Proxy Port
 To run the proxy on a different port, modify the following line in the script:
 
-python
-Copier le code
+copy code :
 server.bind(("0.0.0.0", <your-port>))
 Future Enhancements
 Time-based Filtering: Block specific websites during certain times.
