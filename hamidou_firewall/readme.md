@@ -9,8 +9,7 @@ Logging: Logs all packet states and IP reputation checks into a file (firewall_l
 Optional Web Dashboard: You can extend the project with a Flask-based web interface to visualize traffic and logs in real time.
 Installation
 Clone this repository:
-
-git clone https://github.com/yourusername/Hamidoufirewall.git
+git clone https://github.com/HamidouTlili/python-projects.git
 cd Hamidoufirewall
 Install the required Python libraries:
 
